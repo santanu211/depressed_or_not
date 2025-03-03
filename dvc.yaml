@@ -27,9 +27,6 @@ stages:
     deps:
     - datas/feature
     - src/models/model_build.py
-    params:
-    - models.model_build.n_estimators
-    - models.model_build.random_state
     outs:
     - datas/model
 
