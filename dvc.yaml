@@ -1,0 +1,40 @@
+stages:
+  dataload:
+    cmd: python src/dataload.py
+    deps:
+    - src/dataload.py
+    params:
+    - dataload.test_size
+    outs:
+    - data/raw
+  dataprepro:
+    cmd: python src/dataprepro.py
+    deps:
+    - data/raw
+    - src/dataprepro.py
+    outs:
+    - data/processed
+  feature:
+    cmd: python src/feature.py
+    deps:
+    - data/processed
+    - src/feature.py
+    outs:
+    - data/feature
+  model_build:
+    cmd: python src/model_build.py
+    deps:
+    - data/feature
+    - src/model_build.py
+    params:
+    - model_build.n_estimators
+    - model_build.random_state
+    outs:
+    - data/model
+  model_evalution:
+    cmd: python src/model_evalution.py
+    deps:
+    - data/model
+    - src/model_evalution.py
+    metrics:
+    - metrics.json
