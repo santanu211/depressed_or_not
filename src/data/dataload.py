@@ -5,7 +5,7 @@ import os
 import yaml
 
 def load_params(path):
-    test_size=yaml.safe_load(open(path,"r"))["dataload"]["test_size"]
+    test_size=yaml.safe_load(open(path,"r"))["data"]["dataload"]["test_size"]
     return test_size
 
 

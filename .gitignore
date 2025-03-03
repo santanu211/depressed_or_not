@@ -91,3 +91,6 @@ target/
 
 # Mypy cache
 .mypy_cache/
+/.json
+/depressed_or_not
+/metrics.json
