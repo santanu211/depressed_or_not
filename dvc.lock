@@ -7,6 +7,9 @@ stages:
       hash: md5
       md5: b50f4849e7be6114381502ab2dcd6597
       size: 1479
+    params:
+      params.yaml:
+        data.dataload.test_size: 0.2
     outs:
     - path: datas/raw
       hash: md5
@@ -61,6 +64,10 @@ stages:
       hash: md5
       md5: 02b79efa1d434feaf2b6e9ccb7bbede8
       size: 2994
+    params:
+      params.yaml:
+        models.model_build.n_estimators: 80
+        models.model_build.random_state: 45
     outs:
     - path: datas/model
       hash: md5
